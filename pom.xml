@@ -86,19 +86,6 @@
             <version>2.5.0-rc-2</version>
         </dependency>
     </dependencies>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>bintray</id>
-            <name>Groovy Bintray</name>
-            <url>https://dl.bintray.com/groovy/maven</url>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
@@ -147,6 +134,18 @@
                         <include>*Spec.*</include>
                     </includes>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>process-test-sources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <compilerId>groovy-eclipse-compiler</compilerId>
+                        </configuration>
+                    </execution>
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
@@ -211,5 +210,17 @@
             </plugins>
         </pluginManagement>
     </build>
-
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bintray</id>
+            <name>Groovy Bintray</name>
+            <url>https://dl.bintray.com/groovy/maven</url>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
