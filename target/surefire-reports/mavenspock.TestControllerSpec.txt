@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: mavenspock.TestControllerSpec
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.645 s <<< FAILURE! - in mavenspock.TestControllerSpec
+mavenspock.TestControllerSpec  Time elapsed: 1.643 s  <<< ERROR!
+io.micronaut.context.exceptions.DependencyInjectionException: 
+Failed to inject value for parameter [router] of class: io.micronaut.web.router.DefaultRouter
+
+Path Taken: new NettyHttpServer(NettyHttpServerConfiguration serverConfiguration,ApplicationContext applicationContext,[Router router],RequestArgumentSatisfier requestArgumentSatisfier,MediaTypeCodecRegistry mediaTypeCodecRegistry,NettyCustomizableResponseTypeHandlerRegistry customizableResponseTypeHandlerRegistry,StaticResourceResolver resourceResolver,ExecutorService ioExecutor,ThreadFactory threadFactory,ExecutorSelector executorSelector,NettyServerSslBuilder nettyServerSslBuilder,ChannelOutboundHandler[] outboundHandlers) --> new DefaultRouter([RouteBuilder[] builders])
+	at mavenspock.TestControllerSpec.$spock_initializeSharedFields(TestControllerSpec.groovy:14)
+Caused by: io.micronaut.context.exceptions.BeanInstantiationException: 
+Error instantiating bean of type  [io.micronaut.web.router.DefaultRouter]
+
+Message: io.micronaut.inject.MethodExecutionHandle.getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+Path Taken: new NettyHttpServer(NettyHttpServerConfiguration serverConfiguration,ApplicationContext applicationContext,[Router router],RequestArgumentSatisfier requestArgumentSatisfier,MediaTypeCodecRegistry mediaTypeCodecRegistry,NettyCustomizableResponseTypeHandlerRegistry customizableResponseTypeHandlerRegistry,StaticResourceResolver resourceResolver,ExecutorService ioExecutor,ThreadFactory threadFactory,ExecutorSelector executorSelector,NettyServerSslBuilder nettyServerSslBuilder,ChannelOutboundHandler[] outboundHandlers) --> new DefaultRouter([RouteBuilder[] builders])
+	at mavenspock.TestControllerSpec.$spock_initializeSharedFields(TestControllerSpec.groovy:14)
+Caused by: java.lang.NoSuchMethodError: io.micronaut.inject.MethodExecutionHandle.getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+	at mavenspock.TestControllerSpec.$spock_initializeSharedFields(TestControllerSpec.groovy:14)
+

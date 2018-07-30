@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: mavenspock
+---
+testFramework: spock
+sourceLanguage: java
